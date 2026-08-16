@@ -121,6 +121,7 @@
 											<span class="input-radio__visual input-radio-color">
 												<span class="input-radio-color__sample"
 													style="background-color: #ffffff; border: 1px #cccccc solid;"></span>
+												<span class="v-h">White</span>
 											</span>
 										</label>
 									</li>
@@ -130,6 +131,7 @@
 												value="black">
 											<span class="input-radio__visual input-radio-color">
 												<span class="input-radio-color__sample" style="background-color: #1a1f29;"></span>
+												<span class="v-h">Black</span>
 											</span>
 										</label>
 									</li>
@@ -139,6 +141,7 @@
 												value="gray">
 											<span class="input-radio__visual input-radio-color">
 												<span class="input-radio-color__sample" style="background-color: #aeaeb0;"></span>
+												<span class="v-h">Gray</span>
 											</span>
 										</label>
 									</li>
@@ -148,6 +151,7 @@
 												data-name-display="Purple latte" value="purple">
 											<span class="input-radio__visual input-radio-color">
 												<span class="input-radio-color__sample" style="background-color: #ba9be5;"></span>
+												<span class="v-h">Purple latte</span>
 											</span>
 										</label>
 									</li>
@@ -157,6 +161,7 @@
 												value="color1" disabled>
 											<span class="input-radio__visual input-radio-color">
 												<span class="input-radio-color__sample" style="background-color: #e9a0a7;"></span>
+												<span class="v-h">Color 1</span>
 											</span>
 										</label>
 									</li>
@@ -166,20 +171,21 @@
 												value="color2" disabled>
 											<span class="input-radio__visual input-radio-color">
 												<span class="input-radio-color__sample" style="background-color: #f8cab1;"></span>
+												<span class="v-h">Color 2</span>
 											</span>
 										</label>
 									</li>
 								</ul>
 							</fieldset>
 							<div class="product-card__parameter product-card__parameter_last">
-								<span class="product-card__label">Quantity</span>
+								<label class="product-card__label" for="productQuantity">Quantity</label>
 								<div class="input-quantity">
 									<button class="input-quantity__btn" data-action="decrease" type="button"
-										aria-label="Decrease quantity">&minus;</button>
+										aria-label="Decrease quantity" aria-controls="productQuantity">&minus;</button>
 									<input type="number" class="input-quantity__field" id="productQuantity" name="product_quantity"
-										value="1">
+										value="1" min="1" step="1" max="10" inputmode="numeric">
 									<button class="input-quantity__btn" data-action="increase" type="button"
-										aria-label="Increase quantity">&plus;</button>
+										aria-label="Increase quantity" aria-controls="productQuantity">&plus;</button>
 								</div>
 							</div>
 							<button class="btn btn_secondary btn_hollow" type="button">Add to cart</button>
@@ -403,14 +409,16 @@
 						</nav>
 					</section>
 					<section class="footer__col">
-						<h2 class="footer__heading">Subscribe</h2>
-						<form class="form" action="#">
+						<h2 class="footer__heading" id="subscribe">Subscribe</h2>
+						<form class="form" action="#" aria-labelledby="subscribe">
 							<div class="form__input-group">
-								<input class="input" type="email" name="email" id="email" placeholder="Email">
+								<label for="email" class="v-h">Email</label>
+								<input class="input" type="email" name="email" id="email" placeholder="Email" autocomplete="on">
 								<button class="btn btn_primary">Subscribe</button>
 							</div>
 							<div class="form__input-group">
-								<input class="checkbox" type="checkbox" name="agree" id="agree"> I agree to give you all my data
+								<input class="checkbox" type="checkbox" name="agree" id="agree">
+								<label for="agree">I agree to give you all my data</label>
 							</div>
 
 						</form>

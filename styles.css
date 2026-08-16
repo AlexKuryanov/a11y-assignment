@@ -26,7 +26,7 @@
 }
 
 :root {
-  --text-color-primary: #717b90;
+  --text-color-primary: #393d46;
   --text-color-light: #5e626b;
   --link-color-primary: #171c8f;
   --border-color-primary: #1a1f29;
@@ -198,6 +198,7 @@ fieldset legend {
   display: flex;
   gap: 10px;
   align-items: center;
+  color: var(--link-color-primary);
 }
 
 .header {
@@ -419,6 +420,7 @@ fieldset legend {
   font-size: 16px;
   line-height: 1;
   display: block;
+  color: var(--link-color-primary);
 }
 
 @media (max-width: 1200px) {
@@ -816,6 +818,12 @@ fieldset legend {
 
 .input-quantity__btn:focus-visible {
   z-index: 1;
+}
+
+.input-quantity__btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+  pointer-events: none;
 }
 
 .input-quantity__field {

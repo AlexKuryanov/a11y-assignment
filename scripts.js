@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener('DOMContentLoaded', () => {
   const inputsColor = document.querySelectorAll('input[name=product_color]');
   const formColorLabel = document.getElementById('productColorValue');
   inputsColor.forEach((input) => {
@@ -10,16 +10,36 @@ window.addEventListener("DOMContentLoaded", () => {
   const inputsQuantity = document.querySelectorAll('.input-quantity');
   inputsQuantity.forEach((input) => {
     const inputField = input.querySelector('.input-quantity__field');
-    const inputBtnIncrease = input.querySelector('.input-quantity__btn[data-action=increase]');
-    const inputBtnDecrease = input.querySelector('.input-quantity__btn[data-action=decrease]');
+    const inputBtnIncrease = input.querySelector(
+      '.input-quantity__btn[data-action=increase]',
+    );
+    const inputBtnDecrease = input.querySelector(
+      '.input-quantity__btn[data-action=decrease]',
+    );
+
+    inputBtnDecrease.disabled = true;
     inputBtnIncrease.addEventListener('click', () => {
       const initialValue = inputField.value * 1;
-      inputField.value = initialValue + 1; 
+      inputField.value = initialValue + 1;
+
+      inputBtnDecrease.disabled = false;
+      if (initialValue === 9) {
+        inputBtnIncrease.disabled = true;
+      }
     });
     inputBtnDecrease.addEventListener('click', () => {
       const initialValue = inputField.value * 1;
-      if (initialValue > 1) inputField.value = initialValue - 1;
-    });    
+
+      inputField.value = initialValue - 1;
+      if (inputField.value <= 1) {
+        inputBtnDecrease.disabled = true;
+        inputBtnIncrease.disabled = false;
+      }
+      if (initialValue > 1) {
+        inputBtnDecrease.disabled = false;
+        inputBtnIncrease.disabled = false;
+      }
+    });
   });
 
   const accordions = document.querySelectorAll('.accordion__item');
@@ -31,22 +51,21 @@ window.addEventListener("DOMContentLoaded", () => {
       if (accordion.classList.contains('accordion__item_active')) {
         title.setAttribute('aria-expanded', 'true');
       } else {
-        title.setAttribute('aria-expanded', 'false');   
+        title.setAttribute('aria-expanded', 'false');
       }
-    });    
+    });
   });
 
   const modalTarget = document.querySelectorAll('.modal-target');
-  modalTarget.forEach((modalTarget)=> {
-    modalTarget.addEventListener('click', ()=>{
+  modalTarget.forEach((modalTarget) => {
+    modalTarget.addEventListener('click', () => {
       const modalWindow = document.querySelector('.modal');
       showModal(modalWindow);
     });
   });
   const modalBackdrop = document.querySelectorAll('.modal-backdrop');
-  modalBackdrop.forEach((modalBackdrop)=> {
+  modalBackdrop.forEach((modalBackdrop) => {
     modalBackdrop.addEventListener('click', (e) => {
-
       const modalWindow = e.target.closest('.modal');
       modalWindow.classList.remove('show-modal');
     });
@@ -54,7 +73,5 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const showModal = (modalWindow) => {
     modalWindow.classList.add('show-modal');
-  }
-
-
-})
+  };
+});
