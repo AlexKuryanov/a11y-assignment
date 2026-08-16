@@ -2,13 +2,14 @@ Accessibility HTML / CSS / JS Assignment
 
 В итоге:
 Lighthouse:
-![Result after fixing]()
+<img width="1501" height="972" alt="Снимок экрана от 2026-08-16 20-20-48" src="https://github.com/user-attachments/assets/50f324b6-6460-4dbb-bda4-e6b7b23f7808" />
 
 axe DevTools:
-![Result after fixing]()
+<img width="1501" height="972" alt="Снимок экрана от 2026-08-16 20-21-58" src="https://github.com/user-attachments/assets/3568a46b-8ab5-4e34-b449-39c8b0d24074" />
 
 IBM Accessibility:
-![Result after fixing](https://file+.vscode-resource.vscode-cdn.net/home/lex/%D0%98%D0%B7%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BA%D0%B8%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA%20%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0%20%D0%BE%D1%82%202026-08-16%2020-20-48.png?version%3D1786904809668)
+<img width="1845" height="972" alt="Снимок экрана от 2026-08-16 20-22-11" src="https://github.com/user-attachments/assets/f82e9710-b78a-435b-b4bf-e58877e00dad" />
+
 
 ## ДЗ№2, 3, 4
 
